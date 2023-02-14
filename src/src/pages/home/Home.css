@@ -1,0 +1,10 @@
+.container-page {
+    height: 100vh;
+    position: fixed;
+    background-image: url(../../assets/img/bg.jpg);
+    background-size: cover;
+}
+
+.shadow-text {
+    text-shadow: 0px 2px 40px black;
+}
