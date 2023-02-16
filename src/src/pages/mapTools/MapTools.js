@@ -5,10 +5,10 @@ import { Col, Row } from 'react-bootstrap'
 
 function MapTools() {
     return (<Row className='m-0'>
-        <Col className='col-3'>
+        <Col className='col-3 overflow-auto' style={{height:"90vh"}}>
             <FilterLeft></FilterLeft>
         </Col>
-        <Col>
+        <Col className='mx-0 px-0'>
             <Map></Map>
         </Col>
     </Row>

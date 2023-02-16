@@ -6,7 +6,7 @@ import "./Map.css";
 function Map() {
 
     return (
-        <div className="mapDiv">
+        <div className="mapDiv mx-0 p-0">
             <MapContainer
                 center={[14.88, -35, 76]}
                 zoom={3}
