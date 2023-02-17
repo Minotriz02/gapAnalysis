@@ -18,4 +18,28 @@
 
 .carousel-indicators {
     top: 85% !important;
-  }
+}
+
+.carousel-item {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.carousel-item>div {
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+
+.carousel-item>div:hover {
+    background-color: rgba(240, 240, 240, 0.63);
+}
+
+.hoverable .close-button {
+    display: none;
+    transition: all 0.5s;
+}
+
+.hoverable:hover .close-button {
+    display: inline-block;
+}

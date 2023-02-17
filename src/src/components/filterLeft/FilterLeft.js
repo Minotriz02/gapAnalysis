@@ -21,7 +21,7 @@ function FilterLeft() {
       <CheckFilter title="Landrace Crops"></CheckFilter>
       <div className="d-flex flex-column align-items-center gap-2 mt-3">
         <Button variant="primary" className="w-50 text-white">Add to map</Button>
-        <Button variant="primary" className="text-white"><FontAwesomeIcon icon={faArrowUpFromBracket}/> Upload your gap analysis</Button>
+        <Button variant="primary" className="text-white mb-3"><FontAwesomeIcon icon={faArrowUpFromBracket} /> Upload your gap analysis</Button>
       </div>
     </Container>
   );
