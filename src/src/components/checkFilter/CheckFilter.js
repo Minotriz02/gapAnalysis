@@ -2,9 +2,9 @@ import "./CheckFilter.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Carousel, CloseButton } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function CheckFilter(props) {
+function CheckFilter({ onDataChange, title, onChange }) {
 
   const [tableItems, setTableItems] = useState([...Array(6)].map((_, i) => `Crop ${i}`));
   const [carouselItems, setCarouselItems] = useState([]);
@@ -19,16 +19,28 @@ function CheckFilter(props) {
   const handleRemoveFromCarousel = (index) => {
     const itemToRemove = carouselItems.splice(index, 1)[0];
     setCarouselItems([...carouselItems]);
-    setTableItems([...tableItems, itemToRemove]);
+    setTableItems([...tableItems, itemToRemove].sort());
   };
 
   const handleSearchInputChange = (event) => {
     setSearchValue(event.target.value);
   };
 
+  useEffect(() => {
+    if (onDataChange) {
+      onDataChange([...carouselItems]);
+    }
+  }, [carouselItems]);
+
+  useEffect(() => {
+    setTableItems([...tableItems, ...carouselItems].sort());
+    setCarouselItems([])
+  }, [onChange])
+
+
   return (
     <div className="mt-1 mb-4">
-      {props.title}
+      {title}
       <div className="mb-0 d-flex justify-content-between align-items-center">
         <div className="position-relative w-100">
           <span className="position-absolute search">
