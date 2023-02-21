@@ -4,9 +4,9 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Carousel, CloseButton } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-function CheckFilter({ onDataChange, title, onChange }) {
+function CheckFilter({ onDataChange, title, onChange, crop }) {
 
-  const [tableItems, setTableItems] = useState([...Array(6)].map((_, i) => `Crop ${i}`));
+  const [tableItems, setTableItems] = useState(crop);
   const [carouselItems, setCarouselItems] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
@@ -47,7 +47,7 @@ function CheckFilter({ onDataChange, title, onChange }) {
             <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
           </span>
           <input
-            className="form-control w-100 rounded-0 rounded-top"
+            className="form-control w-100 rounded-0 rounded-top border"
             placeholder="Search by name..."
             value={searchValue}
             onChange={handleSearchInputChange}

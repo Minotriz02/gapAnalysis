@@ -43,3 +43,7 @@
 .hoverable:hover .close-button {
     display: inline-block;
 }
+
+tr:hover{
+    cursor: pointer;
+}
