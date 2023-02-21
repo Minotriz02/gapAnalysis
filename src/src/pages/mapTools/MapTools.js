@@ -3,6 +3,7 @@ import Map from '../../components/map/Map';
 import './MapTools.css'
 import { Col, Row } from 'react-bootstrap'
 import { useState } from 'react';
+import FilterRight from '../../components/filterRight/FilterRight';
 
 function MapTools() {
 
@@ -16,6 +17,9 @@ function MapTools() {
         </Col>
         <Col className='mx-0 px-0'>
             <Map carouselMajorItems={carouselMajorItems} setCarouselMajorItems={setCarouselMajorItems} carouselLandraceItems={carouselLandraceItems} setCarouselLandraceItems={setCarouselLandraceItems}></Map>
+        </Col>
+        <Col className='col-auto'>
+            <FilterRight></FilterRight>
         </Col>
     </Row>
     )
